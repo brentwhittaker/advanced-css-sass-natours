@@ -1,6 +1,5 @@
 .row {
   max-width: $grid-width;
-  background-color: #eee;
   //trick to center element
   margin: 0 auto;
 
@@ -17,7 +16,6 @@
   // $= endswith
   // *= contains
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {

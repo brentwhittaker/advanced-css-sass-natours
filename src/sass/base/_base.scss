@@ -1,0 +1,24 @@
+/*
+
+Notes: setting root font szie and changing all other elements to use rem is a good technique for
+maintenance. Changing just the root will affect all other rem proportionally
+
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* Force inheritance */
+  box-sizing: inherit;
+}
+
+html {
+  /* 10px is an easy value to work with for rems */
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}

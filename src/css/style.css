@@ -1,3 +1,28 @@
+/*
+
+
+0 - 600px:        Phone (max width queries)
+600 to 900px:     Tablet portrait (max width queries)
+900 to 1200px:    Tablet landscape (max width queries)
+1200 to 18800px:  Desktop (our normal styles will apply here, desktop-first approach) 
+1800px +:         Big desktop (min width queries)
+
+
+$breakpoint args:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+note: em units are better suited for media queries - do not use rem units
+1em = 16px
+
+browser default font size is 16px
+- 600px (phone) : 600 / 16 = 37.5em
+- 900px (phone) : 900 / 16 = 56.25em
+- 1200px (phone) : 1200 / 16 = 75em
+- 1800px (phone) : 1800 / 16 = 112.5em
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -41,8 +66,25 @@ maintenance. Changing just the root will affect all other rem proportionally
   box-sizing: inherit; }
 
 html {
-  /* 10px is an easy value to work with for rems */
+  /* 
+  -10px is an easy value to work with for rems 
+  -defines 1 rem
+  - 16 px is browser default font size
+
+  we want a 10 base to work with - easier
+  10/16px * 100 = 62.5%$
+  therefore 1 rem = 10px :)
+  */
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }

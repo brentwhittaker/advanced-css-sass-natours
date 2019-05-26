@@ -13,3 +13,56 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+//media query manager
+/*
+
+
+0 - 600px:        Phone (max width queries)
+600 to 900px:     Tablet portrait (max width queries)
+900 to 1200px:    Tablet landscape (max width queries)
+1200 to 18800px:  Desktop (our normal styles will apply here, desktop-first approach) 
+1800px +:         Big desktop (min width queries)
+
+
+$breakpoint args:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+note: em units are better suited for media queries - do not use rem units
+1em = 16px
+
+browser default font size is 16px
+- 600px (phone) : 600 / 16 = 37.5em
+- 900px (phone) : 900 / 16 = 56.25em
+- 1200px (phone) : 1200 / 16 = 75em
+- 1800px (phone) : 1800 / 16 = 112.5em
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

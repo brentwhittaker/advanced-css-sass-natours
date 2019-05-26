@@ -15,8 +15,36 @@ maintenance. Changing just the root will affect all other rem proportionally
 }
 
 html {
-  /* 10px is an easy value to work with for rems */
+  /* 
+  -10px is an easy value to work with for rems 
+  -defines 1 rem
+  - 16 px is browser default font size
+
+  we want a 10 base to work with - easier
+  10/16px * 100 = 62.5%$
+  therefore 1 rem = 10px :)
+  */
   font-size: 62.5%;
+
+  //NB: order matters!!
+  // put larger ones first
+
+  @include respond(tab-land) {
+    // 1 rem = 9px, 9/16 = 56.25%
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    // 1 rem = 8px, 8/16 = 50%
+    font-size: 50%;
+  }
+
+  //dont need phone here
+
+  @include respond(big-desktop) {
+    // 1 rem = 12px, 12/16 = 75%
+    font-size: 75%;
+  }
 }
 
 body {

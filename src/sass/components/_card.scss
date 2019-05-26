@@ -190,7 +190,10 @@
   }
 
   //re-write card for responsive design
-  @include respond(tab-port) {
+  // need to write media query instead of using mixin for case below (multiple breakpoints)
+
+  // @include respond(tab-port) {
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
     height: auto;
     border-radius: 3px;
     background-color: $color-white;

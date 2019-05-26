@@ -27,7 +27,7 @@ html {
   font-size: 62.5%;
 
   //NB: order matters!!
-  // put larger ones first
+  // put larger ones first - desktop first approach
 
   @include respond(tab-land) {
     // 1 rem = 9px, 9/16 = 56.25%
@@ -49,4 +49,11 @@ html {
 
 body {
   box-sizing: border-box;
+
+  /* We want 30px. 30px / 10px (root font-size) = 3rem */
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

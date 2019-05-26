@@ -39,6 +39,8 @@ browser default font size is 16px
 - 900px (phone) : 900 / 16 = 56.25em
 - 1200px (phone) : 1200 / 16 = 75em
 - 1800px (phone) : 1800 / 16 = 112.5em
+
+order of impl: base + typography > general layouut + grid > page layout > components 
 */
 
 @mixin respond($breakpoint) {

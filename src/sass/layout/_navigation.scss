@@ -17,12 +17,12 @@
 
     @include respond(tab-port) {
       top: 4rem;
-      left: 4rem;
+      right: 4rem;
     }
 
     @include respond(phone) {
       top: 3rem;
-      left: 3rem;
+      right: 3rem;
     }
   }
 
@@ -42,12 +42,12 @@
 
     @include respond(tab-port) {
       top: 4.5rem;
-      left: 4.5rem;
+      right: 4.5rem;
     }
 
     @include respond(phone) {
       top: 3.5rem;
-      left: 3.5rem;
+      right: 3.5rem;
     }
   }
   &__nav {
